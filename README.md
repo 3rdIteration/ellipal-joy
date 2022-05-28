@@ -17,17 +17,20 @@
 
 2. Build tool: [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html#get-software)
 
-3. Clone repository: `git clone https://github.com/ELLIPAL/ellipal-joy.git`
+3. Clone/Download this repository.
 
 4. Launch project: double click `.cproject` file in the project directory
 
-5. Compile source code to generate a hex file: `xxx.hex`
+5. Compile source code to generate a hex file: `xxx.hex` (Either Release or Debug releases will work)
 
-6. Using [STM32 Cube Programmer](https://www.st.com/en/development-tools/stm32cubeprog.html) tool to burn the hex file(*ex: H7B0.hex*) into your device
+6. Disassemble the Ellipal device and solder wires on the SWD terminal as shown below.
+<br><img src="asset/swd.png" />
 
-7. Restart ellipal-joy and enjoy it
+7. Connect the device to your PC via an STM32 Programmer (Any St-Link v2 Clone will be fine), using the 3.3v, GND, SWDIO and SWCLK pins.
 
+8. Using [STM32 Cube Programmer](https://www.st.com/en/development-tools/stm32cubeprog.html) tool to burn the hex file(*ex: H7B0.hex*) into your device
 
+9. Restart ellipal-joy and enjoy it
 
 # Talk to us
 
