@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file      startup_stm32h7b0xx.s
+  * @file      startup_stm32h7a3xxq.s
   * @author    MCD Application Team
-  * @brief     STM32H7B0xx Devices vector table for GCC based toolchain. 
+  * @brief     STM32H7B3xx Devices vector table for GCC based toolchain. 
   *            This module performs:
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
@@ -223,8 +223,8 @@ g_pfnVectors:
   .word     OTG_HS_WKUP_IRQHandler            /* USB OTG HS Wakeup through EXTI */
   .word     OTG_HS_IRQHandler                 /* USB OTG HS                   */
   .word     DCMI_PSSI_IRQHandler              /* DCMI, PSSI                   */
-  .word     CRYP_IRQHandler                   /* CRYP crypto global interrupt */
-  .word     HASH_RNG_IRQHandler               /* RNG, HASH                    */
+  .word     0                                 /* Reserved                     */
+  .word     RNG_IRQHandler                    /* RNG                          */
   .word     FPU_IRQHandler                    /* FPU                          */
   .word     UART7_IRQHandler                  /* UART7                        */
   .word     UART8_IRQHandler                  /* UART8                        */
@@ -295,8 +295,8 @@ g_pfnVectors:
   .word     0                                 /* Reserved                     */
   .word     WAKEUP_PIN_IRQHandler             /* Interrupt for all 6 wake-up pins */
   .word     OCTOSPI2_IRQHandler               /* OCTOSPI2                     */
-  .word     OTFDEC1_IRQHandler                /* OTFDEC1                      */
-  .word     OTFDEC2_IRQHandler                /* OTFDEC2                      */
+  .word     0                                 /* Reserved                     */
+  .word     0                                 /* Reserved                     */
   .word     GFXMMU_IRQHandler                 /* GFXMMU                       */
   .word     BDMA1_IRQHandler                  /* BDMA1                        */
 
@@ -565,11 +565,8 @@ g_pfnVectors:
    .weak      DCMI_PSSI_IRQHandler
    .thumb_set DCMI_PSSI_IRQHandler,Default_Handler
 
-   .weak      CRYP_IRQHandler
-   .thumb_set CRYP_IRQHandler,Default_Handler   
-
-   .weak      HASH_RNG_IRQHandler
-   .thumb_set HASH_RNG_IRQHandler,Default_Handler
+   .weak      RNG_IRQHandler
+   .thumb_set RNG_IRQHandler,Default_Handler   
 
    .weak      FPU_IRQHandler
    .thumb_set FPU_IRQHandler,Default_Handler
@@ -736,12 +733,6 @@ g_pfnVectors:
    .weak      OCTOSPI2_IRQHandler
    .thumb_set OCTOSPI2_IRQHandler,Default_Handler
 
-   .weak      OTFDEC1_IRQHandler
-   .thumb_set OTFDEC1_IRQHandler,Default_Handler
-
-   .weak      OTFDEC2_IRQHandler
-   .thumb_set OTFDEC2_IRQHandler,Default_Handler
-   
    .weak      GFXMMU_IRQHandler
    .thumb_set GFXMMU_IRQHandler,Default_Handler
 
