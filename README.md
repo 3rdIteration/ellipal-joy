@@ -32,6 +32,11 @@
 
 9. Restart ellipal-joy and enjoy it
 
+# Debugging over RS232
+There are TX and RX pads connected to UART1 on the MCU, these are marked on the underside of the main board. Once you solder some wire on to these pads, you can connect to your PC with an FT232L device.
+
+When you build the firmware with the DEBUG environment variable present (Enabled by default), you can then use terminal tools like Putty to view additional debugging information.
+
 # Talk to us
 
 We have active, helpful communities on official website, Twitter, Facebook and Email
