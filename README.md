@@ -10,6 +10,8 @@
 ![ellipal-joy](asset/ellipal-joy.png)
 
 
+If you are after instructions and firmware for building your own Ellipal-Joy using off-the-shelf components, then you want to use [this repository here](https://github.com/3rdIteration/ellipal-joy/tree/Nucleo)
+
 
 # Build & burn
 
