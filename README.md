@@ -4,6 +4,8 @@ ELLIPAL Joy is a device that generates random mnemonic phrases. ELLIPAL Joy stri
 
 This repository has been modified to work with DIY hardware, specifically the [NUCLEO-H7A3ZI-Q](https://www.st.com/en/evaluation-tools/nucleo-h7a3zi-q.html) which can be ordered directly from the ST.com online store. 
 
+If you are after instructions and firmware for the retail Ellipal Joy, then you want to use [this repository here](https://github.com/3rdIteration/ellipal-joy)
+
 # Assemble Hardware, 
 
 1. Hardware Required
