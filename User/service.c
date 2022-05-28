@@ -71,7 +71,9 @@ void ServiceInit(void) {
 	CMD_ENT_DEF(oled, CommandOled);
 	Cmd_AddEntrance(CMD_ENT(oled));
 
+	ssd1306_Init();
 	OLED_Init();
+
 	g_status = dev_pwr_on;
 	ShowPowerOnoffPage();
 	TS_DELAY(1500);
@@ -96,8 +98,12 @@ void ServicePolling(void) {
 
 			ShowPowerOnoffPage();
 			TS_DELAY(1000);
+
 			OLED_ClearScreen();
 			OLED_Off();
+
+			ssd1306_SetDisplayOn(0);
+
 			g_status = dev_pwr_off;
 		}
 	}
@@ -137,8 +143,12 @@ void ServicePolling(void) {
 			DBG_LOG("timout power off");
 			ShowPowerOnoffPage();
 			TS_DELAY(2000);
+
 			OLED_ClearScreen();
 			OLED_Off();
+
+			ssd1306_SetDisplayOn(0);
+
 			g_status = dev_pwr_off;
 		} else if (TS_IS_OVER(ts_idle, 50000)) {
 			if (g_status != dev_pwr_off_count_down) {
@@ -351,8 +361,12 @@ void UserButtonHandle(uint8_t button, ButtonStatusEnum status) {
 
 			ShowPowerOnoffPage();
 			TS_DELAY(2000);
+
 			OLED_ClearScreen();
 			OLED_Off();
+
+			ssd1306_SetDisplayOn(0);
+
 			g_status = dev_pwr_off;
 			while (IsButtonPress()) {
 				continue;

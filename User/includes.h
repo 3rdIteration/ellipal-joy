@@ -45,6 +45,8 @@ extern "C" {
 #include "service.h"
 #include "bip39.h"
 #include "menu.h"
+#include "ssd1306.h"
+#include "ssd1306_tests.h"
 
 /* Exported define -----------------------------------------------------------*/
 

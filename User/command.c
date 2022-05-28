@@ -89,7 +89,13 @@ void CommandReceivePolling(void) {
  * @param len data len
  */
 void CommandSend(uint8_t *data, uint16_t len) {
+#if HARDWARE_ELLIPAL == 1
 	HAL_UART_Transmit(&huart1, data, len, 1000);
+#endif
+
+#if HARDWARE_NUCLEO == 1
+	HAL_UART_Transmit(&huart3, data, len, 1000);
+#endif
 }
 
 /**

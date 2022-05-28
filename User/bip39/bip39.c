@@ -45,22 +45,29 @@ const char* mnemonic_generate(int strength) {
 		return 0;
 	}
 	uint8_t data[32];
-	random_buffer(data, 32);
+
+	if (!random_buffer(data, 32)) {
+		return 0;
+	}
+
 	const char *r = mnemonic_from_data(data, strength / 8);
 	memzero(data, sizeof(data));
 	return r;
 }
 
-void random_buffer(uint8_t *buf, uint8_t len) {
+const int random_buffer(uint8_t *buf, uint8_t len) {
 	uint32_t r = 0;
 
 	for (uint8_t i = 0; i < len; i++) {
 		if (i % 4 == 0) {
-			//   r = random32();
-			HAL_RNG_GenerateRandomNumber(&hrng, &r);
+			if (HAL_RNG_GenerateRandomNumber(&hrng, &r) != HAL_OK) {
+				return 0;
+			}
+			DBG_LOG("Got 32bits of Good Entropy...");
 		}
 		buf[i] = (r >> ((i % 4) * 8)) & 0xFF;
 	}
+	return 1;
 }
 
 const char* mnemonic_from_data(const uint8_t *data, int len) {

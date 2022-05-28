@@ -54,6 +54,12 @@ void ButtonScanPolling(void) {
 	button_io_read[1] = IO_READ(KEY2);
 	button_io_read[2] = IO_READ(KEY3);
 
+#if HARDWARE_NUCLEO == 1
+	IO_WRITE(LD1,(button_io_read[0]==0));
+	IO_WRITE(LD2,(button_io_read[1]==0));
+	IO_WRITE(LD3,(button_io_read[2]==0));
+#endif
+
 	for (i = 0; i < BUTTON_NUM_MAX; i++) {
 		if (button_io[i] != button_io_read[i]) {
 			TS_INIT(ts_button[i]);
