@@ -15,7 +15,11 @@ If you are after instructions and firmware for the retail Ellipal Joy, then you 
     4. Breadboard and jumper wire
     
 2. Hardware Assembly
-![hardware_schematic](schematic/Ellipal-Joy-Nucleo_bb.png) (Schematic includes both I2C and SPI display, but you only need to connect the one that you are using)
+![hardware_schematic](schematic/Ellipal-Joy-Nucleo_bb.png)
+
+Nucleo Image above is for an MB1137 board, but the IO headers that we need are the same as the NUCLEO-H7A3ZI-Q (MB1363) so can simply be connected as above...
+
+Schematic includes both I2C and SPI display, but you only need to connect the one that you are using...
 
 # Build & flash Firmware
 
