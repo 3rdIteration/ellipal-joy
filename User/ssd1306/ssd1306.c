@@ -274,6 +274,15 @@ char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color) {
     return *str;
 }
 
+// m^n
+uint32_t NUM_Pow(uint8_t m, uint8_t n) {
+	uint32_t result = 1;
+	while (n--) {
+		result *= m;
+	}
+	return result;
+}
+
 // show num
 // num : number to show
 // len : number of digits
@@ -282,7 +291,7 @@ char ssd1306_WriteString(char* str, FontDef Font, SSD1306_COLOR color) {
 void ssd1306_WriteNum(uint32_t num, uint8_t len, FontDef Font, SSD1306_COLOR color) {
 	uint8_t t, temp;
 	for (t = 0; t < len; t++) {
-		temp = (num / OLED_Pow(10, len - t - 1)) % 10;
+		temp = (num / NUM_Pow(10, len - t - 1)) % 10;
 		if (temp == 0) {
 			ssd1306_WriteChar('0', Font, color);
 		} else {

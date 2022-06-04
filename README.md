@@ -10,12 +10,12 @@ If you are after instructions and firmware for the retail Ellipal Joy, then you 
 
 1. Hardware Required
     1. [NUCLEO-H7A3ZI-Q](https://www.st.com/en/evaluation-tools/nucleo-h7a3zi-q.html)
-    2. 128x64 I2C Oled Display with SSD1306 Controller
+    2. 128x64 I2C or SPI Oled Display with SSD1306 Controller
     3. 3x Momentary Push Buttons (If you don't have these, you can just use wires)
     4. Breadboard and jumper wire
     
 2. Hardware Assembly
-![hardware_schematic](schematic/Ellipal-Joy-Nucleo_bb.png)
+![hardware_schematic](schematic/Ellipal-Joy-Nucleo_bb.png) (Schematic includes both I2C and SPI display, but you only need to connect the one that you are using)
 
 # Build & flash Firmware
 
@@ -23,11 +23,13 @@ If you are after instructions and firmware for the retail Ellipal Joy, then you 
 
 2. Build tool: [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html#get-software)
 
-3. Clone/Download this repository.
+3. Clone/Download this repository. 
 
 4. Launch project: double click `.cproject` file in the project directory
 
-5. Compile source code to generate a hex file: `xxx.hex` (Either Release or Debug releases will work)
+5. If using an SPI display, open ./user/ssd1306/ssd1306_conf.h and comment out the line with `#define SSD1306_USE_I2C` and uncomment `#define SSD1306_USE_SPI` (Repo uses the I2C display by default, so if you are using this you don't need to do anything)
+
+6. Compile source code to generate a hex file: `xxx.hex` (Either Release or Debug releases will work)
 
 7. Connect the device to your PC via an ST-Link USB port. (At the top of the device)
 

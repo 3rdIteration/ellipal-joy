@@ -97,6 +97,10 @@ void Error_Handler(void);
 #define KEY2_GPIO_Port GPIOD
 #define KEY3_Pin GPIO_PIN_13
 #define KEY3_GPIO_Port GPIOD
+#define OLED_DC_Pin GPIO_PIN_14
+#define OLED_DC_GPIO_Port GPIOD
+#define OLED_CS_Pin GPIO_PIN_15
+#define OLED_CS_GPIO_Port GPIOD
 #define BAT_ADC_EN_Pin GPIO_PIN_6
 #define BAT_ADC_EN_GPIO_Port GPIOG
 #define USB_FS_OVCR_Pin GPIO_PIN_7
@@ -109,6 +113,8 @@ void Error_Handler(void);
 #define USB_FS_N_GPIO_Port GPIOA
 #define USB_FS_P_Pin GPIO_PIN_12
 #define USB_FS_P_GPIO_Port GPIOA
+#define OLED_Res_Pin GPIO_PIN_9
+#define OLED_Res_GPIO_Port GPIOG
 #define LCD_RES_Pin GPIO_PIN_14
 #define LCD_RES_GPIO_Port GPIOG
 #define LD2_Pin GPIO_PIN_1

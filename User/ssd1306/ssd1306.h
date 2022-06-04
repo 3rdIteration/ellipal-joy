@@ -67,7 +67,7 @@ _BEGIN_STD_C
 /* vvv SPI config vvv */
 
 #ifndef SSD1306_SPI_PORT
-#define SSD1306_SPI_PORT        hspi2
+#define SSD1306_SPI_PORT        hspi1
 #endif
 
 #ifndef SSD1306_CS_Port

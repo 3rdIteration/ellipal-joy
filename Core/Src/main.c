@@ -21,6 +21,7 @@
 #include "adc.h"
 #include "i2c.h"
 #include "rng.h"
+#include "spi.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -92,6 +93,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_ADC1_Init();
   MX_I2C1_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
 	HAL_ADCEx_Calibration_Start(&hadc1, ADC_CALIB_OFFSET, ADC_SINGLE_ENDED);
 	HAL_ADC_Start(&hadc1);

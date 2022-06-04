@@ -6,6 +6,8 @@
 #ifndef __SSD1306_CONF_H__
 #define __SSD1306_CONF_H__
 
+#include "main.h"
+
 // Choose a microcontroller family
 //#define STM32F0
 //#define STM32F1
@@ -26,14 +28,16 @@
 #define SSD1306_I2C_PORT        hi2c1
 #define SSD1306_I2C_ADDR        (0x3C << 1)
 
+#if HARDWARE_NUCLEO == 1
 // SPI Configuration
-//#define SSD1306_SPI_PORT        hspi1
-//#define SSD1306_CS_Port         OLED_CS_GPIO_Port
-//#define SSD1306_CS_Pin          OLED_CS_Pin
-//#define SSD1306_DC_Port         OLED_DC_GPIO_Port
-//#define SSD1306_DC_Pin          OLED_DC_Pin
-//#define SSD1306_Reset_Port      OLED_Res_GPIO_Port
-//#define SSD1306_Reset_Pin       OLED_Res_Pin
+#define SSD1306_SPI_PORT        hspi1
+#define SSD1306_CS_Port         OLED_CS_GPIO_Port
+#define SSD1306_CS_Pin          OLED_CS_Pin
+#define SSD1306_DC_Port         OLED_DC_GPIO_Port
+#define SSD1306_DC_Pin          OLED_DC_Pin
+#define SSD1306_Reset_Port      OLED_Res_GPIO_Port
+#define SSD1306_Reset_Pin       OLED_Res_Pin
+#endif
 
 // Mirror the screen if needed
 // #define SSD1306_MIRROR_VERT
