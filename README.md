@@ -14,6 +14,7 @@ If you are after instructions and firmware for building your own Ellipal-Joy usi
 
 
 # Build & burn
+Video Guide + Demo: https://www.youtube.com/watch?v=F6kRR3-t6Zg&t=337s
 
 1. Build platform: Windows
 
